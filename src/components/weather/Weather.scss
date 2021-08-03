@@ -1,0 +1,92 @@
+.weather {
+  height: calc(100vh - 40px);
+  margin-top: 20px;
+  width: 400px;
+  padding: 20px;
+  background-color: darkgrey;
+  color: #fff;
+  text-shadow: 0px 2px 2px #000;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% 100%;
+  &__header {
+    .real-time {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .provinces {
+      ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+        li {
+          float: left;
+          cursor: pointer;
+          transition: 0.4s;
+          &.active {
+            border-bottom: 4px solid #4ec5c5;
+            color: #4ec5c5;
+            font-weight: 700;
+            padding-bottom: 4px;
+          }
+          -webkit-transition: 0.4s;
+          -moz-transition: 0.4s;
+          -ms-transition: 0.4s;
+          -o-transition: 0.4s;
+        }
+        li + li {
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+  &__body {
+    margin-left: 0;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -moz-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+    -o-transform: translateY(-50%) translateX(-50%);
+    left: 50%;
+    .province-name {
+      font-size: 24px;
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+    .temparature {
+      font-size: 88px;
+      font-weight: 700;
+    }
+  }
+  &__footer {
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+    .d-flex {
+      .item {
+        flex: 1;
+        text-align: center;
+        .label {
+          font-weight: 700;
+          font-size: 18px;
+        }
+      }
+    }
+    .d-flex + .d-flex {
+      margin-top: 20px;
+    }
+  }
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
