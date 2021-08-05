@@ -6,7 +6,21 @@
     <div class="weather__header row">
       <div class="real-time col-4">{{ time }}</div>
       <div class="provinces col-8">
-        <ul>
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          @change="selected = $event.target.value"
+        >
+          <option
+            v-for="province in locationList"
+            :key="province.name"
+            :value="province.key"
+            :selected="province.key === 'da nang'"
+          >
+            {{ province.name }}
+          </option>
+        </select>
+        <!-- <ul>
           <li
             v-for="province in locationList"
             :key="province.key"
@@ -15,7 +29,7 @@
           >
             {{ province.name }}
           </li>
-        </ul>
+        </ul> -->
       </div>
     </div>
     <div class="weather__body row">
@@ -96,6 +110,26 @@ export default {
           name: "Hanoi",
           key: "ha noi",
         },
+        {
+          name: "Ho Chi Minh",
+          key: "ha noi",
+        },
+        {
+          name: "Da Lat",
+          key: "da lat",
+        },
+        {
+          name: "Hoi An",
+          key: "hoi an",
+        },
+        {
+          name: "Kon Tum",
+          key: "kon tum",
+        },
+        {
+          name: "Sa Pa",
+          key: "sa pa",
+        },
       ],
       selected: "da nang",
       appId: "5cf5a3f831300f389a5ee9d240e7535e",
@@ -132,7 +166,7 @@ export default {
   },
   computed: {
     today() {
-      return moment().format("dddd, MMMM d, yyyy");
+      return moment().format("dddd, MMMM Do, yyyy");
     },
     time() {
       return moment().format("H:mm");
