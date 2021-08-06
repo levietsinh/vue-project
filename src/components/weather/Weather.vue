@@ -85,13 +85,14 @@ import dayClear from "../../assets/images/day-clear.jpg";
 import dayClouds from "../../assets/images/day-clouds.jpg";
 import dayClouds2 from "../../assets/images/day-clouds-2.jpg";
 import dayClouds3 from "../../assets/images/day-clouds-3.jpg";
+import dayClouds4 from "../../assets/images/day-clouds-4.jpg";
 import dayRain from "../../assets/images/day-rainy.gif";
 import dayThunder from "../../assets/images/day-thunder.jpg";
 import nightClear from "../../assets/images/night-clean-2.jpg";
 import nightClear2 from "../../assets/images/night-clean.jpg";
 import nightClouds from "../../assets/images/night-clouds.jpg";
 import nightClouds2 from "../../assets/images/night-clouds-2.jpg";
-import nightClouds3 from "../../assets/images/night-clouds-2.jpg";
+import nightClouds3 from "../../assets/images/night-clouds-3.jpg";
 import nightRain from "../../assets/images/night-rainy.jpg";
 import nightRain2 from "../../assets/images/night-rainy-2.gif";
 import nightThunder from "../../assets/images/night-thunder.jpg";
@@ -112,7 +113,7 @@ export default {
         },
         {
           name: "Ho Chi Minh",
-          key: "ha noi",
+          key: "ho chi minh",
         },
         {
           name: "Da Lat",
@@ -141,6 +142,7 @@ export default {
       dayClouds,
       dayClouds2,
       dayClouds3,
+      dayClouds4,
       dayRain,
       dayThunder,
       nightRain,
@@ -221,6 +223,8 @@ export default {
             return this.dayClouds2;
           case "broken clouds":
             return this.dayClouds3;
+          case "overcast clouds":
+            return this.dayClouds4;
           case "shower rain":
           case "rain":
             return this.dayRain;
@@ -239,6 +243,7 @@ export default {
           case "scattered clouds":
             return this.nightClouds2;
           case "broken clouds":
+          case "overcast clouds":
             return this.nightClouds3;
           case "shower rain":
           case "rain":
